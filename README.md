@@ -20,6 +20,15 @@ It does **not** include:
 
 For **full feature access** or **live dev mode** to try new features, message [@sheawinkler](https://github.com/sheawinkler).
 
+## Support
+
+If this public build is useful to you, support development here:
+
+`D2R9kNNPLo7w552uX5FakEh2vgDajpCC4LAaBfhmxiMS`
+
+For full feature access or live dev mode, message [@sheawinkler](https://github.com/sheawinkler).
+See `SUPPORT.md` for details.
+
 ## Quick start
 
 ```bash
