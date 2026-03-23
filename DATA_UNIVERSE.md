@@ -55,6 +55,38 @@ The broader system is designed around a much wider market and execution surface.
 - outcome feedback
   - realized trade outcomes, calibration inputs, and decision feedback loops
 
+## Provider mind-map
+
+The broader private system is not built around a single vendor. It combines multiple source families that serve different roles:
+
+```text
+AlgoTrader private data universe
+├── Low-latency onchain streams
+│   ├── Yellowstone gRPC
+│   └── Bitquery / CoreCast
+├── Chain state and metadata
+│   ├── Helius
+│   └── Solana RPC / account-program state
+├── Discovery and enrichment
+│   ├── Birdeye
+│   ├── DexScreener
+│   ├── Jupiter discovery / market surfaces
+│   └── Pump.fun launch / migration context
+├── Market and execution context
+│   ├── Jupiter quotes / routing context
+│   ├── liquidity and route-quality observations
+│   └── execution telemetry
+├── External reference markets
+│   ├── Kraken
+│   ├── Binance
+│   └── Coinbase
+└── Outcome feedback
+    ├── realized trade outcomes
+    └── calibration / decision feedback loops
+```
+
+These names are included to show the shape of the universe, not to disclose the full private wiring, weighting, fallback order, or low-latency implementation.
+
 ## Public/private line
 
 This repo is meant to show the framework and a usable local workflow, not the full private edge.
