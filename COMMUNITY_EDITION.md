@@ -11,6 +11,7 @@ This repository is intentionally limited.
   - flow imbalance
 - deterministic sample dataset
 - local reporting in SOL terms
+- a public-facing description of the broader data universe in `DATA_UNIVERSE.md`
 
 ## Excluded
 
