@@ -34,12 +34,66 @@ See `SUPPORT.md` for details.
 This repo exposes a small, safe slice of a much larger trading universe.
 
 The community edition shows the shape of the stack:
-- SOL-denominated price bars
-- SOL-denominated volume and trade-flow
-- momentum / surge / imbalance features
-- entry, exit, hold-time, and PnL outcomes
+- `price_sol`
+- `volume_sol`
+- `buy_flow_sol`
+- `sell_flow_sol`
+- momentum
+- volume surge
+- flow imbalance
+- entries
+- exits
+- hold time
+- PnL in SOL
 
-The broader system is built around additional source families and layers such as market discovery, onchain event streams, venue-aware market context, execution telemetry, and outcome feedback loops. The public/private boundary is documented in `DATA_UNIVERSE.md`.
+At a higher level, the broader private system combines multiple source families into one decision surface instead of depending on a single feed. That wider universe includes:
+- market discovery
+- price / volume / liquidity context
+- trade-flow context
+- cross-venue context
+- onchain state
+- execution telemetry
+- portfolio / risk state
+- outcome feedback
+
+### Data-source mind-map
+
+The public repo does not ship the full private ingestion stack, but this is the shape of the broader data universe behind it:
+
+```text
+AlgoTrader data universe
+├── Community edition
+│   ├── local sample market data
+│   ├── price_sol / volume_sol
+│   ├── buy_flow_sol / sell_flow_sol
+│   ├── momentum / surge / imbalance features
+│   └── entries / exits / hold time / PnL
+└── Broader private system
+    ├── Low-latency onchain streams
+    │   ├── Yellowstone gRPC
+    │   └── Bitquery / CoreCast
+    ├── Chain state and metadata
+    │   ├── Helius
+    │   └── Solana RPC / account-program state
+    ├── Discovery and enrichment
+    │   ├── Birdeye
+    │   ├── DexScreener
+    │   ├── Jupiter discovery / market surfaces
+    │   └── Pump.fun launch / migration context
+    ├── Market and execution context
+    │   ├── Jupiter quotes / routing context
+    │   ├── liquidity and route-quality observations
+    │   └── execution telemetry
+    ├── External reference markets
+    │   ├── Kraken
+    │   ├── Binance
+    │   └── Coinbase
+    └── Outcome feedback
+        ├── realized trade outcomes
+        └── calibration / decision feedback loops
+```
+
+Some of the provider names above exist only in the broader private system and are intentionally not shipped in this community edition. The fuller public/private boundary is documented in `DATA_UNIVERSE.md`.
 
 ## Quick start
 
