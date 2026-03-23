@@ -29,6 +29,18 @@ If this public build is useful to you, support development here:
 For full feature access or live dev mode, message [@sheawinkler](https://github.com/sheawinkler).
 See `SUPPORT.md` for details.
 
+## Data universe
+
+This repo exposes a small, safe slice of a much larger trading universe.
+
+The community edition shows the shape of the stack:
+- SOL-denominated price bars
+- SOL-denominated volume and trade-flow
+- momentum / surge / imbalance features
+- entry, exit, hold-time, and PnL outcomes
+
+The broader system is built around additional source families and layers such as market discovery, onchain event streams, venue-aware market context, execution telemetry, and outcome feedback loops. The public/private boundary is documented in `DATA_UNIVERSE.md`.
+
 ## Quick start
 
 ```bash
@@ -53,4 +65,4 @@ the community edition will direct you to contact [@sheawinkler](https://github.c
 
 The production/private system contains significant proprietary work around live data ingestion, execution, calibration, and operating discipline. This public repo is a safe community edition that exposes the general framework and a usable local workflow without disclosing the private edge.
 
-The exact public/private split is documented in `COMMUNITY_EDITION.md`.
+The exact public/private split is documented in `COMMUNITY_EDITION.md`, and the public-facing data map is documented in `DATA_UNIVERSE.md`.
